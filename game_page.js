@@ -7,21 +7,21 @@ document.getElementById("player2_name").innerHTML = player2_name + ":";
 document.getElementById("player1_score").innerHTML = player1_score + ":";
 document.getElementById("player2_score").innerHTML = player2_score + ":";
 document.getElementById("player_question").innerHTML ="turno para preguntar" + player1_name ;
-document.getElementById("player_answer").innerHTML = "turno para responder"+  player1_name;
+document.getElementById("player_answer").innerHTML = "turno para responder"+  player2_name;
 var question_turn = "player1";
 var answer_turn = "player2";
 function send() {
     get_word = document.getElementById("word").value;
-woed = get_word.toLowerCase();
+word = get_word.toLowerCase();
 console.log("Palabra en minúsculas =" + word);
 charAt1 = word.charAt(1);
 console.log(charAt1);
-lenght_divide_2 = Math.floor(word.lenght/2);
-charAt2 = word.charAt(lenght_divide_2);
+length_divide_2 = Math.floor(word.length/2);
+charAt2 = word.charAt(length_divide_2);
 console.log(charAt2);
-lenght_minus_1 = word.lenght - 1;
-charAt3 = word.charAt(lenght_minus_1);
-console.log(remove.charAt3);
+length_minus_1 = word.length - 1;
+charAt3 = word.charAt(length_minus_1);
+console.log(charAt3);
 remove_charAt1 = word.replace(charAt1, "_");
 remove_charAt2 = remove_charAt1.replace(charAt2, "_");
 remove_charAt3 = remove_charAt2.replace(charAt3, "_");
@@ -31,9 +31,9 @@ input_box = "<br>Respuesta : <input type='text' id= 'input_check_box'>";
 check_button = "<br><br><button class='btn btn-info' onclick='check()'>Comprobar</button>";
 row = question_word + input_box + check_button ;
 document.getElementById("output").innerHTML = row;
-document.getElementsById("word").value = "";
+document.getElementById("word").value = "";
 }
-fuction check();
+function check()
 {
 get_answer = document.getElementById("input_check_box").value;
 answer = get_answer.toLowerCase();
@@ -72,5 +72,5 @@ else
     answer_turn = "player1"
     document.getElementById("player_answer").innerHTML = "turno para responder - " + player1_name;    
 }
-document.getElementById("output").innerHTMl = "";
+document.getElementById("output").innerHTML = "";
 }
